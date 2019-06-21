@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import classNames from 'classnames';
@@ -284,6 +285,11 @@ function Navbar({ className, hideLogo, route, isMobile }) {
               title="Features"
             >
               Features
+            </a>
+          </Link>
+          <Link href="/">
+            <a className={scroll >= LOGO_TOP ? null : 'disable'} aria-label="Next.js">
+              <Logo size={80} />
             </a>
           </Link>
           <Link href="/learn/basics/getting-started">
