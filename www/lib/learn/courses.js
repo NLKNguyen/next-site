@@ -118,7 +118,7 @@ const courses = [
             points: 20
           },
           {
-            id: 'with-router',
+            id: 'use-router',
             points: 5
           },
           {
