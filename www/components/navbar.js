@@ -14,12 +14,12 @@ import SpectrumLogo from './icons/spectrum';
 import { links } from '../site-manifest';
 
 function Navbar({ className, hideLogo, route, isMobile }) {
-  const [scroll, setScroll] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const LOGO_TOP = 170;
 
   const handleScroll = () => {
     if (window.scrollY !== 0) {
-      setScroll(window.scrollY);
+      setScrollPosition(window.scrollY);
     }
   };
 
@@ -28,7 +28,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scroll]);
+  }, [scrollPosition]);
 
   if (isMobile) {
     return (
@@ -321,7 +321,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
             Docs
           </a>
         </div>
-        <div className={scroll >= LOGO_TOP ? 'logo visible' : 'logo'}>
+        <div className={scrollPosition >= LOGO_TOP ? 'logo visible' : 'logo'}>
           <Link href="/">
             <a aria-label="Next.js">
               <NextLogo />
