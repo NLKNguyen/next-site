@@ -246,7 +246,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
               text-align: center;
               overflow: hidden;
               transition: all 0.2s ease;
-              //visibility: hidden;
+              visibility: hidden;
               pointer-events: none;
               transform: translate3d(-1.5%, 30%, 0);
               opacity: 0;
@@ -254,6 +254,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
             nav .logo.visible {
               pointer-events: auto;
               transform: translate3d(-1.5%, 0, 0);
+              visibility: visible;
               opacity: 1;
             }
             nav .logo a {
@@ -321,7 +322,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
             Docs
           </a>
         </div>
-        <div className={scrollPosition >= LOGO_TOP ? 'logo visible' : 'logo'}>
+        <div className={scrollPosition >= LOGO_TOP || !hideLogo ? 'logo visible' : 'logo'}>
           <Link href="/">
             <a aria-label="Next.js">
               <NextLogo />
