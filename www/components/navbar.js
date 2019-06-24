@@ -28,7 +28,7 @@ function Navbar({ className, hideLogo, route, isMobile }) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollPosition]);
+  }, []);
 
   if (isMobile) {
     return (
